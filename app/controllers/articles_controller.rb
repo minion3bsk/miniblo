@@ -6,10 +6,12 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end  
   
-
+  def create
+    Article.create(article_params)
+  end    
   
   private
   def article_params
-    params.permit(:text,:title)
+    params.require(:article).permit(:text,:title)
   end  
 end
