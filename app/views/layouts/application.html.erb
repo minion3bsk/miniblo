@@ -6,10 +6,21 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="style.scss">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="menu-list">
+       <ul>
+         <li><%= link_to "Miniblo", root_path%></li>
+         <li><a herf = "/">テスト</a></li>
+         <li><a herf = "/">テスト</a></li>
+         <li><a herf = "/">テスト</a></li>
+       </ul>
+    </div>
+    <div class="main"> 
+      <%= yield %>
+    </div>
   </body>
 </html>

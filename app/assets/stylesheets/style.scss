@@ -1,0 +1,14 @@
+.main{
+  background-color: #8b8687;
+  height: 80em;
+}
+
+.menu-list ul{
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  
+  li{
+    text-align: center;
+  }
+}
