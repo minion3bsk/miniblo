@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   def index
+    @articles = Article.all
   end
   
   def new
@@ -7,7 +8,7 @@ class ArticlesController < ApplicationController
   end  
   
   def create
-    Article.create(article_params)
+    Article.create(title: article_params[:title], text: article_params[:text], user_id: current_user.id)
   end    
   
   private

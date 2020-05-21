@@ -1,0 +1,7 @@
+<% @articles.each do |article| %>
+    title:<%= article.title %></br>
+    text:<%= article.text %></br>
+    <div class = "container-item--border" >
+        user:<%= article.user.username %><br/>
+    </div>
+<% end %>    

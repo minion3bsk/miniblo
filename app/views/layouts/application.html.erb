@@ -14,9 +14,15 @@
     <div class="menu-list">
        <ul>
          <li><%= link_to "Miniblo", root_path%></li>
-         <li><%= link_to "post",  new_article_path%></li>
-         <li><a herf = "/">テスト</a></li>
-         <li><a herf = "/">テスト</a></li>
+         <% if user_signed_in? %>
+           <li><%= link_to "post",  new_article_path%></li>
+           <li><%= link_to "mypage"%> </li>
+           <li><%= link_to "user_view"%> </li>
+           <li><%= link_to "sign_out",destroy_user_session_path, method: :delete %> </li>
+         <% else %>   
+           <li><%= link_to "sign_up", new_user_registration_path %></li>
+           <li><%= link_to "login", new_user_session_path %></li>
+         <% end %>
        </ul>
     </div>
     <div class="main"> 
