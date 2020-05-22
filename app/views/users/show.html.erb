@@ -4,6 +4,10 @@
   <p><%= @user.username %>さん</p>
 <% end %>  
 
+<% if @user.image? %>
+    <%= image_tag @user.image.url %>
+<% end %>
+
 <% @articles.each do |article| %>
   <%= article.title %>
   <div class = "container-item--border">
