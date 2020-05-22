@@ -1,7 +1,13 @@
-<% @articles.each do |article| %>
-    title:<%= article.title %></br>
-    text:<%= article.text %></br>
-    <div class = "container-item--border" >
+<div class = "article-list">
+    <% @articles.each do |article| %>
+    <div class= "article-list__article-title">
+         title:<%= article.title %></br>
+    </div>    
+    <div class= "article-list__article-text">
+        text:<%= article.text %></br>
+    </div>
+    <div class = "article-list__article-user" >
         user:<%= article.user.username %><br/>
     </div>
-<% end %>    
+    <% end %>    
+</div>

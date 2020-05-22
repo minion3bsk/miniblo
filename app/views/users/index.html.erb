@@ -1,0 +1,7 @@
+<% @users.each do |user| %>
+  <div class = "container-item--border" >
+    <%= link_to "#{user.username}さん",user_path(user) ,method: :get %>
+  </div>
+<% end %>  
+
+  
