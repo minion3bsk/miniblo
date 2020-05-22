@@ -6,6 +6,8 @@
 
 <% if @user.image? %>
     <%= image_tag @user.image.url %>
+<% else %>
+    <%= image_tag 'no_image.png' %>
 <% end %>
 
 <% @articles.each do |article| %>
