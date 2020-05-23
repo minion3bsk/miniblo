@@ -1,0 +1,85 @@
+#
+# YAMG Configuration
+#
+
+# Main icon
+icon:
+  path: 'icons'     # path to icons folder
+  rounded: true     # defaults to false
+  background: false # nil or color #RGB or rgba()
+
+# Splash screen
+splash:
+  path: 'splash'        # path to the splash assets folder
+  background: '#fff6d5' # nil or color RGBA
+
+# Icon + name for instance
+# media:
+#   path: 'media.png'
+#   background: false
+
+# Uncomment to use screenshot feature!
+# screenshot:
+#   url: 'localhost:3000'
+
+#
+# What to do?
+#
+compile:
+  # Just remove if you don't need
+
+  # Preview to ./export/
+  raster: true
+
+  # Web projects
+  #
+  # Any framework, included: Favicons,iOS/Android/MStiles platforms
+  web:
+    path: '../my/web/app'
+
+  # Mobile
+  #
+  # phonegap: '../path/to/project/www/res'
+  # cordova: 'soon shortcut'
+  # Cordova/iOS project
+  ios: '/path/to/project/platforms/ios/ProjectName/'
+  # Cordova/Android project
+  android: '/path/to/project/platforms/android/'
+  # winos: '../proj'
+
+  #
+  # Assets for web stores/players
+  # Just remove if you don't need
+  #
+  # Compiles to media/apple
+  apple: true
+  # Compiles to media/google
+  google: true
+  # Compiles to media/twitter
+  twitter: true
+  # Compiles to media/facebook
+  facebook: true
+
+  #
+  # Creating your own
+  #
+  # my-proj:
+  #   path: '../app/www/img'
+  #   # icon: './another/source' # icon here is source
+  #   export:
+  #     icon: # Notice: icon inside export
+  #       'icon16.png': 16
+  #       'icon64.png': 64
+  #       'icon128.png': 128
+
+  # Custom icons/splash
+  # Compiles to media/*
+  # custom:
+  #   icons: [32, 64, 128]
+  #   medias: [400, 800]
+
+# Custom screenshots
+# screenshots:
+#   home:
+#     url: 'github.com'
+#     size: [1280, 720]
