@@ -1,0 +1,31 @@
+<div class = "account-page">
+  <%= form_for(current_user) do |f| %>
+    <div class = "account-page__inner--icon">
+      <div class = "account-page__inner--icon__label">
+        <div class = "account-page__inner--icon__input">
+          <div class = "account-page__inner--icon__input__image">
+            <% if @image.present? %>
+              <%= image_tag "#{@image.url}",  class: 'account-page__inner--icon__input__image', width: '100%' %>
+            <% else %>
+              <%= image_tag "no_image.png",  class: 'account-page__inner--icon__input__image', width: '100%' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class = "account-page__username">
+      <%= f.label :username %>
+      <%= f.text_field :username, :placeholder => "#{@username}"%>
+    </div>
+    
+    <div class = "account-page__profile">
+      <%= f.label :profile %>
+      <%= f.text_area :profile %>      
+    </div>
+    
+    <div class = "account-page__update">
+      <%= f.submit "update" %>
+    </div>
+  <% end %>
+</div>
+

@@ -1,0 +1,62 @@
+.show-page{
+  
+  &__inner--icon{
+    display: flex;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-left: 20%;
+      
+    
+      &__input{
+        width: 180px;
+        height: 180px;
+        border-radius: 100px;  
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        
+          &__image{
+             
+          }
+      }
+      
+      &__profileall{
+        &__username{
+          font-size: 30px;
+          margin-left: 20px;
+          margin-right: 20px;
+          vertical-align: middle;
+        }
+        
+        &__profile{
+          margin-left: 20px;
+          margin-right: 20px;
+        }
+      }
+    
+  }
+  
+ 
+  &__profile{
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+  }
+  
+  
+  &__buttons{
+    font-size: 20px;
+    display: flex;
+    
+    &__item{
+        margin-left: 2%;
+        .link{
+          text-decoration: none;
+          color:#fff;
+          
+        }
+        
+    }
+  }
+  
+}
