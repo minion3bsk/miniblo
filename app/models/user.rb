@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_many :articles
   mount_uploader :image, ImageUploader
+  has_many :articles, dependent: :destroy
   validates :username, presence: true
 
   

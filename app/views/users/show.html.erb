@@ -1,5 +1,6 @@
 <% if @user.id == current_user.id %>
   <p><%= current_user.username %>さんのマイページ</p>
+  <%= link_to "ユーザーの削除", "/users/#{current_user.id}", method: :delete %><br/>
 <% else %>  
   <p><%= @user.username %>さん</p>
 <% end %>  

@@ -1,19 +1,19 @@
 <div class = "article-list">
     <% @articles.each do |article| %>
-    
-    <div class= "article-list__article-title">
-         title:<%= article.title %></br>
-    </div>    
-    <div class= "article-list__article-text">
-        text:<%= article.text %></br>
-    </div>
-    <div class = "article-list__article-user" >
-        <% if article.user.image? %>
-            <%= image_tag user.image.url %>
-        <% else %>
-            <%= image_tag 'no_image.png' %>
-        <% end %>    
-        user:<%= article.user.username %><br/>
-    </div>
+        
+        <div class= "article-list__article-title">
+             title:<%= article.title %></br>
+        </div>    
+        <div class= "article-list__article-text">
+            text:<%= article.text %></br>
+        </div>
+        <div class = "article-list__article-user" >
+            <% if article.user.image.present? %>
+                <%= image_tag article.user.image.url %>
+            <% else %>
+                <%= image_tag 'no_image.png' %>
+            <% end %>    
+            user:<%= article.user.username %><br/>
+        </div>
     <% end %>    
 </div>
