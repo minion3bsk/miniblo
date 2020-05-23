@@ -1,19 +1,16 @@
-<% if @user.id == current_user.id %>
-  <p><%= current_user.username %>さんのマイページ</p>
-  <%= link_to "ユーザーの削除", "/users/#{current_user.id}", method: :delete %><br/>
-<% else %>  
-  <p><%= @user.username %>さん</p>
-<% end %>  
-
-<% if @user.image? %>
-    <%= image_tag @user.image.url %>
-<% else %>
-    <%= image_tag 'no_image.png' %>
-<% end %>
-
-<% @articles.each do |article| %>
-  <%= article.title %>
-  <div class = "container-item--border">
-     <%= article.text %>
+<div class = "account-page">
+  <%= form_for(current_user) do |f| %>
+  <div class = "account-page__inner--icon">
+    <div class = "account-page__inner--icon__label">
+      <div class = "account-page__inner--icon__input">
+        <div class = "account-page__inner--icon__input__image">
+          <% if @image.present? %>
+            <%= image_tag "#{@image.url}",  class: 'account-page__inner--icon__input__image', width: '100%' %>
+          <% end %>  
+        </div>
+      </div>
+    </div>
   </div>
-<% end %>  
+  <% end %>
+</div>
+

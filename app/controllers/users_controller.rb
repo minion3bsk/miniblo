@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id]) if params[:id]
-    @name = user.username
+    @name = @user.username
     @image = @user.image
     @profile = @user.profile
   end
