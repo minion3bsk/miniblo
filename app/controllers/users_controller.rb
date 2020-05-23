@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @image = @user.image
     @username = @user.username
     @profile = @user.profile
+    @articles = @user.articles
   end
   
   def edit

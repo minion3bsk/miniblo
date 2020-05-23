@@ -1,0 +1,22 @@
+<div class = "article-list">
+    <div class = "article-list__article-user" >
+        <% if article.user.image.present? %>
+            <%= image_tag article.user.image.url, class: "article-list__article-user__image" %>
+        <% else %>
+            <%= image_tag 'no_image.png', class: "article-list__article-user__image" %>
+        <% end %>  
+    </div>
+    <div class = "article-list__article-info">
+        <div  class = "article-list__article-info__user">
+            <%= article.user.username %><br/>
+        </div>
+        <div class= "article-list__article-info__title">
+             title:<%= article.title %></br>
+        </div>    
+        <div class= "article-list__article-info__text">
+            text:<%= article.text %></br>
+        </div>
+    </div>   
+</div>    
+
+

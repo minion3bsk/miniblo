@@ -19,11 +19,18 @@
       <div class = "show-page__inner--icon__profileall__profile">
         <% profile = "#{@profile}" %>
         <%= simple_format profile %>
+        
+      <% if current_user.id == @user.id %>  
         <div class = "show-page__buttons">
           <div class = "show-page__buttons__item"><%= link_to "edit", edit_user_path, class: "link" %></div>
           <div class = "show-page__buttons__item"><%= link_to "delete user", "/users/#{@user.id}", method: :delete, class: "link" %></div>
         </div>
+      <% end %>  
       </div>
     </div>
-  
+</div>
+<div class = "log">
+    <% @articles.each do |article| %>
+      <%= render partial: "articles/list", locals: { article: article } %>
+    <% end %>  
 </div>
