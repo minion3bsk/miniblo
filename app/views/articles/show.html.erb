@@ -4,10 +4,11 @@
   </div>
   <div class = "datail-article__user">
     <% if @article.user.image.present? %>
-        <a href = "/users/<%= @article.user.id %>"><%= image_tag @article.user.image.url, class: "datail-article__user__image" %></a><%= @article.user.username %>
+        <a href = "/users/<%= @article.user.id %>"><%= image_tag @article.user.image.url, class: "datail-article__user__image" %></a>
     <% else %>
-        <a href = "/users/<%= @article.user.id %>"><%= image_tag 'no_image.png', class: "datail-article__user__image" %></a><%= @article.user.username %>
+        <a href = "/users/<%= @article.user.id %>"><%= image_tag 'no_image.png', class: "datail-article__user__image" %></a>
     <% end %>  
+    <%= @article.user.username %>さんが<%= simple_time(@article[:created_at] ) %>に投稿
   </div>
   <div class = "datail-article__text">
     <% text = @article.text %>

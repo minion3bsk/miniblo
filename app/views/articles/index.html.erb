@@ -14,7 +14,19 @@
             <div class= "article-list__article-info__title">
                  <%= link_to "#{article.title}", "articles/#{article.id}" %>
             </div>    
-        </div>   
+        </div>
+        <% if user_signed_in? %>
+            <div class = "article-list__article-info__edit">
+              <% if current_user.id = article.user.id %>
+                <%= link_to "articles/#{article.id}", :method => :delete do %>
+                  <i class="fa fa-trash-alt"></i>
+                <% end %>
+                <%= link_to "articles/#{article.id}", :method => :get do %>
+                  <i class="fa fa-edit"></i>
+                <% end %>
+              <% end %>  
+            </div>
+        <% end %>
     </div>    
 <% end %>    
 

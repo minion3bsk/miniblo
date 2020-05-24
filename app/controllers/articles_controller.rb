@@ -12,6 +12,12 @@ class ArticlesController < ApplicationController
     Article.create(title: article_params[:title], text: article_params[:text], user_id: current_user.id)
   end  
   
+  def destroy
+    article = Article.find(params[:id])
+    article.destroy
+    redirect_to root_path
+  end  
+  
   def show
     @article = Article.find(params[:id])
   end  
