@@ -20,7 +20,7 @@
         <% profile = "#{@profile}" %>
         <%= simple_format profile %>
         
-      <% if current_user.id == @user.id %>  
+      <% if current_user.id == @id %>  
         <div class = "show-page__buttons">
           <div class = "show-page__buttons__item"><%= link_to "edit", edit_user_path, class: "link" %></div>
           <div class = "show-page__buttons__item"><%= link_to "delete user", "/users/#{@user.id}", method: :delete, class: "link" %></div>

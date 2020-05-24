@@ -1,0 +1,25 @@
+<div class = "datail-article">
+  <div class = "datail-article__title">
+    <%= @article.title %>
+  </div>
+  <div class = "datail-article__user">
+    <% if @article.user.image.present? %>
+        <a href = "/users/<%= @article.user.id %>"><%= image_tag @article.user.image.url, class: "datail-article__user__image" %></a><%= @article.user.username %>
+    <% else %>
+        <a href = "/users/<%= @article.user.id %>"><%= image_tag 'no_image.png', class: "datail-article__user__image" %></a><%= @article.user.username %>
+    <% end %>  
+  </div>
+  <div class = "datail-article__text">
+    <% text = @article.text %>
+    <%= simple_format(text) %>
+  </div>
+  <!--<div class = "datil-article__share">-->
+  <!--  <a href="https://twitter.com/share?-->
+  <!--  via={@OurpostsO}&-->
+  <!--  related={@OurpostsO}&-->
+  <!--  hashtags=投稿アプリ,シェアしよう&-->
+  <!--  text=#{@article.user}さんの記事「#{@article.title}」" -->
+  <!--  rel="nofollow" -->
+  <!--  target="_blank"><i class="fab fa-twitter-square"></i></a>-->
+  <!--</div>-->
+</div>

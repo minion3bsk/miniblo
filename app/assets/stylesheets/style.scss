@@ -1,15 +1,41 @@
-.main{
-  background-color: #000;
-  color: #fff;
-  height: 80em;
+$back: #fef6e4;
+$headline: #001858;
+$text: #172c66;
+$button: #f582ae;
+$blue: #8bd3dd;
+
+body{
+  font-family: 'Montserrat Alternates','TsukuBRdGothic-Regular',sans-serif;
+  color: $text;
+  
+   a{
+    text-decoration: none;
+    color: $blue;
+    }
+  
+    a:hover{
+    
+    }
+    .menu-list {
+      &__title{
+        font-size: 35px;
+      }
+      ul{
+      display: flex;
+      list-style: none;
+      justify-content: space-around;
+      align-items: center;
+    
+    li{
+      text-align: center;
+      }
+    }
+  }
+  .main{
+    background-color: $back;
+    color: $text;
+    height: 80em;
+    
+    }
 }
 
-.menu-list ul{
-  display: flex;
-  list-style: none;
-  justify-content: space-around;
-  
-  li{
-    text-align: center;
-  }
-}

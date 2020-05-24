@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   def show
     @user = User.find(params[:id]) if params[:id]
     @image = @user.image
     @username = @user.username
     @profile = @user.profile
     @articles = @user.articles
+    @id = @user.id
   end
   
   def edit
