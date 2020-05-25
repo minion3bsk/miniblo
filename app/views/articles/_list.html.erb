@@ -1,22 +1,26 @@
-<div class = "article-list">
-    <div class = "article-list__article-user" >
-        <% if article.user.image.present? %>
-            <%= image_tag article.user.image.url, class: "article-list__article-user__image" %>
-        <% else %>
-            <%= image_tag 'no_image.png', class: "article-list__article-user__image" %>
-        <% end %>  
-    </div>
-    <div class = "article-list__article-info">
-        <div  class = "article-list__article-info__user">
-            <%= article.user.username %><br/>
+    <div class = "article-list">
+        <div class = "article-list__article-user" >
+            <% if article.user.image.present? %>
+                <a href = "/users/<%= article.user.id %>"><%= image_tag article.user.image.url, class: "article-list__article-user__image" %></a>
+            <% else %>
+                <%= image_tag 'no_image.png', class: "article-list__article-user__image" %>
+            <% end %>  
         </div>
-        <div class= "article-list__article-info__title">
-             title:<%= article.title %></br>
-        </div>    
-        <div class= "article-list__article-info__text">
-            text:<%= article.text %></br>
+        <div class = "article-list__article-info">
+            <div  class = "article-list__article-info__user">
+                <%= article.user.username %><br/>
+            </div>
+            <div class= "article-list__article-info__title">
+                 <%= link_to "#{article.title}", article_path(article.id) %>
+            </div>    
         </div>
-    </div>   
-</div>    
-
-
+        <% if user_signed_in? %>
+            <div class = "article-list__article-info__edit">
+              <% if current_user.id == article.user.id %>
+                <%= link_to "articles/#{article.id}", :method => :delete do %>
+                  <i class="fa fa-trash-alt"></i>
+                <% end %>
+              <% end %>  
+            </div>
+        <% end %>
+    </div> 
