@@ -1,35 +1,33 @@
 .account-page{
   
   &__inner--icon{
-    
-    &__input{
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;  
-      overflow: hidden;
-      margin: 0 auto;
       
         &__image{
-           
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 15em;
+            height: 15em;
+            border-radius: 100%;  
+            overflow: hidden;                     
         }
+  }
+  
+  &__edit{
+    text-align: center;
+    font-size: 40px;
+  
+    &__username{
+      text-align: center;
     }
-  }
+    
+    &__profile{
+      text-align: center;
+    }
+    
+    &__update{
+      text-align: center;
+    }
+  }  
   
-  &__username{
-    color: #fff;
-    font-size: 40px;
-    text-align: center;
-  }
-  
-  &__profile{
-    color: #fff;
-    font-size: 40px;
-    text-align: center;
-  }
-  
-  &__update{
-    text-align: center;
-  }
-  
- 
 }

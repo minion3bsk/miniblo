@@ -1,15 +1,10 @@
 <div class = "show-page">
   <div class = "show-page__inner--icon">
-    <div class = "show-page__inner--icon__label">
-      <div class = "show-page__inner--icon__input">
-        <div class = "show-page__inner--icon__input__image">
-          <% if @image.present? %>
-            <%= image_tag "#{@image.url}",  class: 'show-page__inner--icon__input__image', width: '100%' %>
-          <% else %>
-            <%= image_tag "no_image.png",  class: 'show-page__inner--icon__input__image', width: '100%' %>
-          <% end %>
-        </div>
-      </div>
+       <% if @image.present? %>
+        <%= image_tag "#{@image.url}",  class: 'show-page__inner--icon__input__image', width: '100%' %>
+      <% else %>
+        <%= image_tag "no_image.png",  class: 'show-page__inner--icon__input__image', width: '100%' %>
+      <% end %>
     </div>
     <div class = "show-page__inner--icon__profileall">
       <div class = "show-page__inner--icon__profileall__username">
@@ -22,8 +17,16 @@
         
       <% if current_user.id == @id %>  
         <div class = "show-page__buttons">
-          <div class = "show-page__buttons__item"><%= link_to "edit", edit_user_path, class: "link" %></div>
-          <div class = "show-page__buttons__item"><%= link_to "delete user", "/users/#{@user.id}", method: :delete, class: "link" %></div>
+          <div class = "show-page__buttons__item">
+            <%= link_to user_path(@id), :method => :delete do %>
+              <i class="fa fa-trash-alt"></i>
+            <% end %>
+          </div>
+          <div class = "show-page__buttons__item">
+            <%= link_to edit_user_path(@id), :method => :get do %>
+              <i class="fa fa-edit"></i>
+            <% end %>          
+          </div>
         </div>
       <% end %>  
       </div>

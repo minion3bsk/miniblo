@@ -3,7 +3,7 @@
             <% if article.user.image.present? %>
                 <a href = "/users/<%= article.user.id %>"><%= image_tag article.user.image.url, class: "article-list__article-user__image" %></a>
             <% else %>
-                <%= image_tag 'no_image.png', class: "article-list__article-user__image" %>
+                <a href = "/users/<%= article.user.id %>"><%= image_tag 'no_image.png', class: "article-list__article-user__image" %></a>
             <% end %>  
         </div>
         <div class = "article-list__article-info">

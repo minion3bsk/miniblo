@@ -1,4 +1,5 @@
 <% @articles.each do |article| %>
     <%= render partial: "articles/list", locals: { article: article } %>
+    <%= render partial: "articles/like", locals: { article: article } %>
 <% end %>    
 
