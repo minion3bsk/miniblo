@@ -1,7 +1,7 @@
 class LikesController < ApplicationController
   def create
     @like = Like.create(user_id: current_user.id, article_id: params[:article_id])
-    @likes = Like.find(params[:id])
+    @likes = Like.where(article_id: params[:articleid])
     @article = Article.all
     redirect_to root_path
   end
