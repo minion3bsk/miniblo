@@ -1,1 +1,1 @@
-$("#destroy").html("<%= j(render partial: 'like') %>")
+$("#like-<%= @article.id %>").html("<%= j(render partial: 'articles/like', locals: {article: @article}) %>")

@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
   <% if article.user_liked(current_user.id) %>
-    <%= link_to article_like_path(article, article_id: article.id), method: :delete, class: "destroy!", remote: true do %>
+    <%= link_to article_like_path(article, article_id: article.id), method: :delete, remote: true do %>
       <i class="fas fa-heart">
         <span>
           <%= article.like_count %>
@@ -8,7 +8,7 @@
       </i>
     <% end %>
   <% else %>
-    <%= link_to  article_likes_path(article), method: :post, class: "create!",remote: true do %>
+    <%= link_to  article_likes_path(article), method: :post, remote: true do %>
       <span>
         <i class="far fa-heart">
           <%= article.like_count %>
